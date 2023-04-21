@@ -81,12 +81,12 @@ type PlayerWaiting = {
 	skin?: string;
 };
 
-type Player = {
+export type Player = {
 	name: string;
 	extension?: PlayerExtension;
 } & (PlayerPlaying | PlayerWaiting);
 
-interface Squad {
+export interface Squad {
 	name: string;
 	eliminatedTimesCount: number;
 	players: Player[];

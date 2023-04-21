@@ -391,7 +391,7 @@ const parseBannerCollected = (event: BannerCollectedEvent, state: ApexLegendsSta
 	ensureRawPlayerExists(state, event.collected);
 };
 
-const parseUnknownEvent = (event: UnknownEvent, state: ApexLegendsState) => {
+const parseUnknownEvent = (event: UnknownEvent, _state: ApexLegendsState) => {
 	displayUnexpectedDataInfo('event', event.category, event);
 };
 

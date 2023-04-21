@@ -1,5 +1,5 @@
 import { ApexLegendsEvent } from './apexevents';
-import { ApexLegendsState } from './apexlegends';
+import { ApexLegendsState, Player, Squad } from './apexlegends';
 import { Events } from './events';
 import { PlayerExtension, TeamExtension } from './interfaces';
 type EventNames = keyof Events;
@@ -33,4 +33,4 @@ declare class ApexLegendsGSI {
     resetData: () => void;
     digest: (rawEvent: ApexLegendsEvent) => ApexLegendsState | null;
 }
-export { ApexLegendsGSI };
+export { ApexLegendsGSI, ApexLegendsState, Player, Squad };

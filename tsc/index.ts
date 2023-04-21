@@ -1,5 +1,5 @@
 import { ApexLegendsEvent } from './apexevents';
-import { ApexLegendsState, Player } from './apexlegends';
+import { ApexLegendsState, Player, Squad } from './apexlegends';
 import { parseCommonEventData, parsers } from './eventparsers';
 import { Events } from './events';
 import { PlayerExtension, TeamExtension } from './interfaces';
@@ -173,4 +173,4 @@ class ApexLegendsGSI {
 	};
 }
 
-export { ApexLegendsGSI };
+export { ApexLegendsGSI, ApexLegendsState, Player, Squad };
