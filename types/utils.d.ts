@@ -7,7 +7,7 @@ export declare const createSquadCopy: (squad: Squad) => Squad;
 export declare const createNewState: () => ApexLegendsState;
 export declare const createStateCopy: (state: ApexLegendsState | undefined) => ApexLegendsState;
 export declare const calculateLeaderboards: (newState: ApexLegendsState) => {
-    leaderboardNames: string[];
-    sortedSquads: Squad[];
+	leaderboardNames: string[];
+	sortedSquads: Squad[];
 };
 export declare const fillExtensions: (squads: Squad[], teams: TeamExtension[], players: PlayerExtension[]) => void;

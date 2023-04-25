@@ -14,5 +14,6 @@ export interface PlayerExtension {
 	realName: string | null;
 	country: string | null;
 	avatar: string | null;
+	teamId: string | null;
 	extra: Record<string, string>;
 }
