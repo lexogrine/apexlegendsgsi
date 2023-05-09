@@ -119,7 +119,7 @@ export const fillExtensions = (squads: Squad[], teams: TeamExtension[], players:
 			teamResults.push({ teamId: playerExtension.teamId, votes: 1 });
 		});
 		const probableTeam = teamResults.sort((a, b) => b.votes - a.votes)[0];
-		if (!probableTeam || probableTeam.votes === 0) {
+		if (!probableTeam || probableTeam.votes === 0 || probableTeam.votes !== x.players.length) {
 			x.teamExtension = undefined;
 			return;
 		}
