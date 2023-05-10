@@ -111,7 +111,7 @@ export const fillExtensions = (squads: Squad[], teams: TeamExtension[], players:
 
 			if (!playerExtension || !playerExtension.teamId) return;
 
-			const targetTeam = teamResults.find(t => t.teamId === playerExtension.id);
+			const targetTeam = teamResults.find(t => t.teamId === playerExtension.teamId);
 			if (targetTeam) {
 				targetTeam.votes++;
 				return;
