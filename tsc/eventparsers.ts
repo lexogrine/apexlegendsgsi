@@ -1,4 +1,4 @@
-import {
+import type {
 	AmmoUsedEvent,
 	ApexLegendsEvent,
 	ApexLegendsEventType,
@@ -30,8 +30,8 @@ import {
 	WraithPortalEvent,
 	ZiplineUsedEvent
 } from './apexevents';
-import { ApexLegendsState, Player, PlayerPlaying, PlayerRaw, Squad } from './apexlegends';
-import { calculateDistance, displayUnexpectedDataInfo } from './utils';
+import type { ApexLegendsState, Player, PlayerPlaying, PlayerRaw, Squad } from './apexlegends';
+import { calculateDistance, displayUnexpectedDataInfo } from './utils.js';
 
 const ensureSquadExists = (state: ApexLegendsState, squadName: string): Squad => {
 	const squad = state.squads.find(x => x.name === squadName);

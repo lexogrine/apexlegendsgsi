@@ -1,9 +1,9 @@
-import { ApexLegendsEvent } from './apexevents';
-import { ApexLegendsState, Player, Squad } from './apexlegends';
-import { parseCommonEventData, parsers } from './eventparsers';
-import { Events } from './events';
-import { PlayerExtension, TeamExtension } from './interfaces';
-import { calculateLeaderboards, createStateCopy, fillExtensions } from './utils';
+import type { ApexLegendsEvent } from './apexevents';
+import type { ApexLegendsState, Player, Squad } from './apexlegends';
+import { parseCommonEventData, parsers } from './eventparsers.js';
+import type { Events } from './events';
+import type { PlayerExtension, TeamExtension } from './interfaces';
+import { calculateLeaderboards, createStateCopy, fillExtensions } from './utils.js';
 
 type EventNames = keyof Events;
 interface EventDescriptor {

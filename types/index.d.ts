@@ -1,7 +1,7 @@
-import { ApexLegendsEvent } from './apexevents';
-import { ApexLegendsState, Player, Squad } from './apexlegends';
-import { Events } from './events';
-import { PlayerExtension, TeamExtension } from './interfaces';
+import type { ApexLegendsEvent } from './apexevents';
+import type { ApexLegendsState, Player, Squad } from './apexlegends';
+import type { Events } from './events';
+import type { PlayerExtension, TeamExtension } from './interfaces';
 type EventNames = keyof Events;
 interface EventDescriptor {
     listener: Events[EventNames];

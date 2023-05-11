@@ -103,9 +103,28 @@ export const calculateLeaderboards = (
 
 export const fillExtensions = (squads: Squad[], teams: TeamExtension[], players: PlayerExtension[]) => {
 	squads.forEach(x => {
-		x.teamExtension = teams.find(e => e.name === x.name);
+		const teamResults: { teamId: string; votes: number }[] = [];
+
 		x.players.forEach(p => {
-			p.extension = players.find(e => e.name === p.name);
+			const playerExtension = players.find(e => e.steamid === p.name);
+			p.extension = playerExtension;
+
+			if (!playerExtension || !playerExtension.teamId) return;
+
+			const targetTeam = teamResults.find(t => t.teamId === playerExtension.teamId);
+			if (targetTeam) {
+				targetTeam.votes++;
+				return;
+			}
+			teamResults.push({ teamId: playerExtension.teamId, votes: 1 });
 		});
+		const probableTeam = teamResults.sort((a, b) => b.votes - a.votes)[0];
+		if (!probableTeam || probableTeam.votes === 0 || probableTeam.votes !== x.players.length) {
+			x.teamExtension = undefined;
+			return;
+		}
+
+		const targetTeam = teams.find(team => team.id === probableTeam.teamId);
+		x.teamExtension = targetTeam;
 	});
 };
