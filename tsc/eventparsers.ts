@@ -335,8 +335,9 @@ const parsePlayerDowned = (event: PlayerDownedEvent, state: ApexLegendsState) =>
 
 const parsePlayerRevive = (event: PlayerReviveEvent, state: ApexLegendsState) => {
 	const player = ensureRawPlayerExists(state, event.player);
-	if (player && player.type === 'playing') {
-		player.reviveLog.push({ playerName: event.revived, timestamp: state.currentTimestamp });
+	const revived = ensureRawPlayerExists(state, event.revived);
+	if (player && player.type === 'playing' && revived) {
+		player.reviveLog.push({ playerName: revived.name, timestamp: state.currentTimestamp });
 	}
 };
 

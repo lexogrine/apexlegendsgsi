@@ -202,7 +202,7 @@ type BannerCollectedEvent = BaseEvent & {
 type PlayerReviveEvent = BaseEvent & {
 	type: 'playerRevive';
 	player: PlayerRaw;
-	revived: string;
+	revived: PlayerRaw;
 };
 
 type PlayerRespawnTeamEvent = BaseEvent & {
